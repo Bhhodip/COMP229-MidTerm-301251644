@@ -1,3 +1,11 @@
+/*
+File Name - app.js
+Student Name - Bhhodip patel
+Student ID - 301251644
+Date - 24-6-2022
+*/
+
+
 // moddules for node and express
 let createError = require('http-errors');
 let express = require('express');
@@ -35,6 +43,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../client')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 
 // route redirects

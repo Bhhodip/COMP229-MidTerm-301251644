@@ -1,3 +1,9 @@
+/*
+File Name - index.js
+Student Name - Bhhodip patel
+Student ID - 301251644
+Date - 24-6-2022
+*/
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -8,10 +14,6 @@ let book = require('../models/books');
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
-  res.render('content/index', {
-    title: 'Home',
-    books: ''
-   });
-});
+  res.render('content/index', {title: 'Home',books: '' });});
 
 module.exports = router;

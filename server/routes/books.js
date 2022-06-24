@@ -1,3 +1,12 @@
+/*
+File Name - books.js
+Student Name - Bhhodip patel
+Student ID - 301251644
+Date - 24-6-2022
+*/
+
+
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -5,66 +14,25 @@ let mongoose = require('mongoose');
 
 // define the book model
 let book = require('../models/books');
+let bookController = require('../controllers/book');
 
 /* GET books List page. READ */
-router.get('/', (req, res, next) => {
-  // find all books in the books collection
-  book.find( (err, books) => {
-    if (err) {
-      return console.error(err);
-    }
-    else {
-      res.render('books/index', {
-        title: 'Books',
-        books: books
-      });
-    }
-  });
-
-});
+router.get('/',bookController.booklist);
 
 //  GET the Book Details page in order to add a new Book
-router.get('/add', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-
-});
+router.get('/add', bookController.displaybook);
 
 // POST process the Book Details page and create a new Book - CREATE
-router.post('/add', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-
-});
+router.post('/add',bookController.addbook );
 
 // GET the Book Details page in order to edit an existing Book
-router.get('/:id', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-});
+router.get('/edit/:id', bookController.displaycorrection);
 
 // POST - process the information passed from the details form and update the document
-router.post('/:id', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-
-});
+router.post('/edit/:id', bookController.editbook);
 
 // GET - process the delete by user id
-router.get('/delete/:id', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-});
+router.get('/delete/:id', bookController.deletebook);
 
 
 module.exports = router;

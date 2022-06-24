@@ -1,10 +1,17 @@
+/*
+File Name - books.js
+Student Name - Bhhodip patel
+Student ID - 301251644
+Date - 24-6-2022
+*/
+
+
 let mongoose = require('mongoose');
 
 // create a model class
 let Book = mongoose.Schema({
     Title: String,
-    Description: String,
-    Price: Number,
+    Price: String,
     Author: String,
     Genre: String
 },
@@ -12,4 +19,4 @@ let Book = mongoose.Schema({
   collection: "books"
 });
 
-module.exports = mongoose.model('Book', Book);
+module.exports = mongoose.model('book', Book);
